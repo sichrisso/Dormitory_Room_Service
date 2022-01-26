@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Dormitory Service</title> 
+    <link th:href="@{/css/custom.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+
+  <body class="home">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Register
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a th:href="@{/userregister}">User</a></li>
+          <li class="dropdown-submenu">
+            <a class="test" tabindex="-1" href="#">Worker<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a th:href="@{/foodregister}">Food</a></li>
+              <li><a th:href="@{/laundryregister}">Laundry</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!--<form style="margin-left: 250px;" class="d-flex" method="POST" th:action="@{/logout}">
+          <input type="submit" value="Logout"/>
+         </form>-->
+       
+      </div>
+      <div class="home-text">
+        <h1><div class="home_text_1"><span>WE WORK TO</span> EASE YOUR </div></h1>
+        <div class="home_text_2">DORMITORY LIFE.</div>
+        <div class="home_text_3"> Feeling At<span> Home!</span> </div>
+        <div class="click-btn">
+          <a th:href="@{/service}"><button class="button">Service</button></a>
+          <a th:href="@{/login}"><button class="button">Log In</button></a>
+      </div> 
+    </div><br><br>
+    <section class="section-meals">
+      <ul class="meals-showcase clearfix">
+          <li>
+              <figure class="meal-photo">
+                  <img th:src="@{/images/1.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/2.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/3.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/4.jpg}" />
+              </figure>
+          </li>
+      </ul>
+      <ul class="meals-showcase clearfix">
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/5.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/7.jpeg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/6.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/8.jpg}" />
+              </figure>
+          </li>
+      </ul>
+  </section><br><br>
+  
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <script>
+        $(document).ready(function(){
+          $('.dropdown-submenu a.test').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        });
+        </script>
+  </body>
+</html>

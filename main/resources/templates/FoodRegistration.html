@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Dormitory Service</title>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+    <link th:href="@{/css/custom2.css}" rel="stylesheet" />
+  </head>
+
+  <body class="home2">
+    <div class="container add"><br><br><br>
+    
+      <h1> Food-Registration</h1><br>
+      
+
+      <form  th:action="@{/food}"  id="registerForm" method="POST">
+        
+        <div class="form-group row">
+          <label for="foodPlace" class="col-sm-3 col-form-label"><b>Name Of Food Place:</b> </label>
+          <div class="col-sm-6">
+              <input type="text"class="form-control mb-4 col-10"  name="foodPlace" id="foodPlace" placeholder="Enter Food Place">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="userName" class="col-sm-3 col-form-label"><b>Username:</b> </label>
+          <div class="col-sm-6">
+              <input type="text" class="form-control mb-4 col-10" name="userName" id="userName" placeholder="Enter User Name">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="foodPassword" class="col-sm-3 col-form-label"><b>Password:</b> </label>
+          <div class="col-sm-6">
+              <input type="Password" class="form-control mb-4 col-10"  name="foodPassword"  id="foodPassword" placeholder="Enter Passwrod">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label for="address" class="col-sm-3 col-form-label"><b>Address:</b> </label>
+          <div class="col-sm-6">
+              <input type="text" class="form-control mb-4 col-10" name="address" id="address" placeholder="Enter Address">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-sm-3 col-form-label"><b>Email:</b> </label>
+          <div class="col-sm-6">
+              <input type="email" class="form-control mb-4 col-10"  name="email"  id="email" placeholder="Enter Email">
+          </div>
+        </div>
+      
+        <div class="form-group row">
+          <label for="username" class="col-sm-3 col-form-label"><b>Contact:</b> </label>
+          <div class="col-sm-6">
+              <input type="text" class="form-control mb-4 col-10"  name="contact" id="contact" placeholder="Enter Phone No.">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label for="delivery" class="col-sm-3 col-form-label"><b>Delivery:</b></label>
+          <div class="col-sm-6">
+              <input type="text" class="form-control mb-4 col-10"  name="delivery" id="delivery" placeholder="YES/NO">
+          </div>
+        </div>
+        <!-- <p class="insert"> <b>Click</b> <a th:href="@{/insertMenu}"><b class="btn btn-link col-1" style="font-weight: 200px;font-size:larger">HERE </b></a><b> to Insert Menu</b> </p> -->
+        <input class="btn btn-info col-2" type="submit" value="Register" /><br><br>
+     
+      </form>
+      
+  
+    	<hr>
+		
+		<a th:href = "@{/}" class="btn btn-link col-2" style="color: black; font-weight: bolder;"> Back </a><br><br><br>
+	</div>
+  </body>
+</html>
+
+
+				
+	
+		
+	
