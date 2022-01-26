@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="ISO-8859-1">
 <title>Dormitory Service</title>
@@ -22,7 +22,7 @@
 				<tr>
 					<th>Food</th>
           			<th> Price(Birr)</th>
-					<th> </th>
+					<th sec:authorize="hasAuthority('ROLE_FOOD')"> </th>
 				</tr>
 			</thead>
 		<tbody>
@@ -30,9 +30,10 @@
 					<td th:text="${menu.food}"></td>
 					<td th:text="${menu.price}"></td>
 					
-                    <td >
+                    <td sec:authorize="hasAuthority('ROLE_FOOD')">
                         <a th:href="@{/update/{id}(id=${menu.id})}" class="btn btn-dark">Update</a>
-                        <a th:href="@{/deleteMenu/{id}(id=${menu.id})}" class="btn btn-danger">Delete</a></td>   
+                        <a th:href="@{/deleteMenu/{id}(id=${menu.id})}" class="btn btn-danger">Delete</a>
+					</td>   
 				</tr>
 			</tbody>
 		</table>

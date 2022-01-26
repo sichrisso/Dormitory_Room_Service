@@ -1,14 +1,8 @@
 package com.dormitoryservice.project;
 
-import com.dormitoryservice.project.Security.User;
-
-//import org.mindrot.jbcrypt.BCrypt;
-
 //import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,9 +22,6 @@ public class FoodController {
 	
 	@Autowired
 	private FoodService foodService;
-
-	// @Autowired
-	// private PasswordEncoder encoder;
 	//private final PasswordEncoder passwordEncoder;
 	
 	@GetMapping("/food")
@@ -54,23 +45,8 @@ public class FoodController {
 
 	@PostMapping("/food")
 	public String saveFood(@ModelAttribute("food") Food food) {
-		// System.out.println("\n\n\n");
-		// System.out.println(food);
-		// System.out.println("\n\n\n");
-		User user = new User();
-		user.setUsername(food.getUserName());
-		//user.setPassword(encoder.encode(food.getFoodPassword()));
-		//user.setPassword(BCrypt.hashpw(food.getFoodPassword(), BCrypt.gensalt()));
-		user.setPassword(food.getFoodPassword());
-		user.setPhone(String.valueOf(food.getContact()));
-		user.setFullName(food.getFoodPlace());
-
 		// save Food to database
-		try {
-			foodService.saveFood(food, user);
-		} catch (Exception e) {
-			return "redirect:/logins";	
-		}
+		foodService.saveFood(food);
 		return "redirect:/login";
 	}
 
