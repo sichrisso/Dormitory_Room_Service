@@ -1,4 +1,4 @@
-package com.dormitoryservice.project.Security;
+package com.dormitoryservice.project.security;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

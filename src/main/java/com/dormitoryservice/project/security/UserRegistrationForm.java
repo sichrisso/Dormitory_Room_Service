@@ -1,4 +1,4 @@
-package com.dormitoryservice.project.Security;
+package com.dormitoryservice.project.security;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;

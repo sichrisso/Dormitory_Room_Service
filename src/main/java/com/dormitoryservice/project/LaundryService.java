@@ -2,7 +2,7 @@ package com.dormitoryservice.project;
 
 import java.util.List;
 
-import com.dormitoryservice.project.Security.User;
+import com.dormitoryservice.project.security.User;
 
 
 public interface LaundryService {

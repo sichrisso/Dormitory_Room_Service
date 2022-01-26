@@ -1,4 +1,4 @@
-package com.dormitoryservice.project.Security;
+package com.dormitoryservice.project.security;
 
 import java.util.Arrays;
 import java.util.Collection;

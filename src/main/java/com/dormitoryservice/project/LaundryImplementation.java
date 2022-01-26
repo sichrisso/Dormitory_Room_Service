@@ -4,10 +4,10 @@ package com.dormitoryservice.project;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import com.dormitoryservice.project.Security.User;
-import com.dormitoryservice.project.Security.UserRepository;
+import com.dormitoryservice.project.security.User;
+import com.dormitoryservice.project.security.UserRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

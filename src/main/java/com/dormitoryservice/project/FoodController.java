@@ -1,9 +1,7 @@
 package com.dormitoryservice.project;
 
 
-import com.dormitoryservice.project.Security.User;
-// import com.dormitoryservice.project.Security.UserRepository;
-
+import com.dormitoryservice.project.security.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
