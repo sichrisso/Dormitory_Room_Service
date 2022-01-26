@@ -4,12 +4,16 @@ package com.dormitoryservice.project;
 import java.util.List;
 import java.util.Optional;
 
+import com.dormitoryservice.project.Security.User;
+import com.dormitoryservice.project.Security.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.data.domain.Page;
 // import org.springframework.data.domain.PageRequest;
 // import org.springframework.data.domain.Pageable;
 // import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class FoodImplementation implements FoodService {
@@ -17,13 +21,21 @@ public class FoodImplementation implements FoodService {
 	@Autowired
 	private FoodRepository foodRepository;
 
+	@Autowired
+	private UserRepository userRepo;
+
 	@Override
 	public List<Food> getAllFoods() {
 		return foodRepository.findAll();
 	}
 
 	@Override
-	public void saveFood(Food food) {
+	// @Transactional
+	public void saveFood(Food food, User user) {
+		this.userRepo.save(user);
+		// System.out.println("\n\n\n");
+		// System.out.println(user);
+		// System.out.println("\n\n\n");
 		this.foodRepository.save(food);
 	}
 
