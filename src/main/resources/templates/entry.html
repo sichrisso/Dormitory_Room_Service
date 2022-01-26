@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Dormitory Service</title> 
+    <link th:href="@{/css/custom.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+
+  <body class="home">
+      <div class="home-text">
+        <h1><div class="home_text_1"><span></span> </div></h1>
+        <div style="text-align: center; font-size: 70px; text-shadow: none; font-weight: bolder;" class="home_text_2">DORMITORY SERVICES</div>
+        <div class="home_text_3"> <span> </span> </div>
+        <div class="click-btn">
+          <a th:href="@{/entry}"><button class="button">Click To Begin</button></a>
+      </div> 
+    </div>
+    <div class="back"><br><br>
+    <section class="section-meals">
+      <ul class="meals-showcase clearfix">
+          <li>
+              <figure class="meal-photo">
+                  <img th:src="@{/images/1.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/2.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/3.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/4.jpg}" />
+              </figure>
+          </li>
+      </ul>
+      <ul class="meals-showcase clearfix">
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/5.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/7.jpeg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/6.jpg}" />
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo">
+                <img th:src="@{/images/8.jpg}" />
+              </figure>
+          </li>
+      </ul>
+  </section><br><br>
+  </div>
+  
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <script>
+        $(document).ready(function(){
+          $('.dropdown-submenu a.test').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        });
+        </script>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+      
+  </body>
+</html>

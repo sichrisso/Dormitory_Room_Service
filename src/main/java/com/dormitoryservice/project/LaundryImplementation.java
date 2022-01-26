@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import com.dormitoryservice.project.Security.User;
+import com.dormitoryservice.project.Security.UserRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,9 @@ public class LaundryImplementation implements LaundryService {
 
 	@Autowired
 	private LaundryRepository laundryRepository;
+
+	@Autowired
+	private UserRepository userRepo;
 
 	@Override
 	public List<Laundry> getAllLaundrys() {
@@ -25,8 +30,17 @@ public class LaundryImplementation implements LaundryService {
 	}
 
 	@Override
-	public void saveLaundryRegister(Laundry laundry) {
-		this.laundryRepository.save(laundry);
+	public boolean saveLaundryRegister(Laundry laundry, User user) {
+		try {
+			userRepo.save(user);
+			System.out.println("\n\n\n");
+			System.out.println(user);
+			System.out.println("\n\n\n");
+			laundryRepository.save(laundry);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 
@@ -46,13 +60,4 @@ public class LaundryImplementation implements LaundryService {
 	public void deleteLaundryById(long id) {
 		this.laundryRepository.deleteById(id);
 	}
-
-	/*@Override
-	public Page<Laundry> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
-		Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
-			Sort.by(sortField).descending();
-		
-		Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
-		return this.laundryRepository.findAll(pageable);
-	}*/
 }

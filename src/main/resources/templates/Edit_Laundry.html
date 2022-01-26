@@ -8,19 +8,24 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
     <link th:href="@{/css/custom2.css}" rel="stylesheet" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 </head>
 <body class="home3">
-	<div class="container add"><br><br><br>
-    <form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
-      <input type="submit" value="Logout"/>
+  <form style="margin-left: 950px;" sec:authorize = "isAuthenticated()" class="btn btn-default dropdown" method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
      </form>
+	<div class="container add"><br><br><br>
+    
     
 	
 		<h1>Edit Information</h1><br>
  
 		<form action="#" th:action="@{/saveLaundry}" th:object="${laundry}"
 			method="POST">
-        <!-- Add hidden form field to handle update -->
+      
         <input type="hidden" th:field="*{id}" />
 
          
@@ -71,7 +76,9 @@
 		
 		<hr>
 		
-		<a th:href = "@{/laundry}" class="btn btn-link col-2" style="color: white; font-weight: bolder" > Back to Laundry Service List</a><br><br><br>
+		<a th:href = "@{/laundry}" class="btn btn-link col-2" style="color: black; font-weight: bolder" > Back </a><br><br><br>
 	</div>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
 </body>
 </html>

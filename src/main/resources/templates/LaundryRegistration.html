@@ -8,9 +8,14 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
     <link th:href="@{/css/custom2.css}" rel="stylesheet" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
 
   <body class="home3">
+  
     <div class="container add"><br><br><br>
     
       <h1>Laundry-Registration</h1><br>
@@ -67,12 +72,15 @@
         </div>
 
         <input class="btn btn-info col-2" type="submit" value="Register" />
+        <a th:href = "@{/entry}" class="btn btn-dark col-1" style="color: white;"> Back </a><br><br>
       </form>
   
     	<hr>
 		
-		<a th:href = "@{/}" class="btn btn-link col-2" style="color: black; font-weight: bolder"> Back </a><br><br>
+		
 	</div>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
   </body>
 </html>
 

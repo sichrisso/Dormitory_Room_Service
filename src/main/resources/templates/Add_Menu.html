@@ -8,12 +8,16 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
     <link th:href="@{/css/custom2.css}" rel="stylesheet" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body class="home2">
 	<div class="container add"><br><br><br>
-    <form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+    <form style="margin-left: 950px;" sec:authorize = "isAuthenticated()" class="btn btn-default dropdown" method="POST" th:action="@{/logout}">
       <input type="submit" value="Logout"/>
-     </form>
+       </form>
 	
 		<h1>Add New Menu</h1><br>
  
@@ -41,8 +45,10 @@
 		</form>
 		
 		<hr>
-		
+
 		<a th:href = "@{/menu}" class="btn btn-link col-2" style="color: white; font-weight: bolder"> Back to Menu List</a>
 	</div>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
 </body>
 </html>

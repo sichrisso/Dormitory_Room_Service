@@ -1,5 +1,5 @@
 .body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://c1.wallpaperflare.com/preview/622/323/592/bear-s-garlic-bread-knife-board.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://cdn.wallpapersafari.com/24/54/K3ZnyS.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -37,8 +37,8 @@
 }
 
 .home {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://publicaffairs.illinois.edu/wp-content/uploads/2020/03/University-of-Illinois-Zoom-background-8-3.jpg);
-    background-image: linear-gradient(rgba(214, 111, 111, 0), rgba(0, 0, 0, 0.5)), url(https://publicaffairs.illinois.edu/wp-content/uploads/2020/03/University-of-Illinois-Zoom-background-8-3.jpg);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.95)), url(https://publicaffairs.illinois.edu/wp-content/uploads/2020/03/University-of-Illinois-Zoom-background-1-3.jpg);
+    background-image: linear-gradient(rgba(214, 111, 111, 0), rgba(0, 0, 0, 0.95)), url(https://publicaffairs.illinois.edu/wp-content/uploads/2020/03/University-of-Illinois-Zoom-background-1-3.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -48,46 +48,64 @@
 
 }
 
+.entry {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://cdn.wallpapersafari.com/53/64/TDqtAC.jpg);
+    background-image: linear-gradient(rgba(214, 111, 111, 0), rgba(0, 0, 0, 0.5)), url(https://cdn.wallpapersafari.com/53/64/TDqtAC.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width:auto;
+    position: relative;
+}
+
+/* .back {
+    background-color: #1f3304;
+    color: black;
+} */
+
 .home-text {
     width: 90%;
     color: white;
     margin-left: 100px;
     margin-top: 90px;
-    text-shadow: 
+    font-weight: bolder;
+    /* text-shadow: 
         -2px 2px 0 #1f2833,
         2px 2px 0 #1f2833,
         2px -2px 0 #1f2833,
-        -2px -2px 0 #1f2833;
+        -2px -2px 0 #1f2833; */
 }
     
 .home_text_1 {
     font-size: 35px;
+    font-weight: bolder;
     font-family: sans-serif;
 }
     
 .home_text_2 {
     font-size: 45px;
-    font-weight: 200;
+    font-weight: bolder;
     margin-left: -3px;
     font-family:sans-serif;
 }
     
 .home_text_3 {
     font-size: 25px;
-    
+    font-weight: bolder;
     font-family:cursive;
 }
     
 .home-text span {
     color: #fff;
-    font-weight: 600; 
+    font-weight: bolder; 
     font-family:sans-serif;
     font-size: 75px; 
-    text-shadow: 
+    /* text-shadow: 
         -2px 2px 0 #1f2833,
         2px 2px 0 #1f2833,
         2px -2px 0 #1f2833,
-        -2px -2px 0 #1f2833;
+        -2px -2px 0 #1f2833; */
 }
 
 .button {
@@ -113,7 +131,7 @@
     
 .button:hover {
  
-    background-color: #e29235;
+    background-color: rgba(255, 238, 0, 0.8);
 }
 
 .click-btn {
@@ -181,13 +199,13 @@ Orange color: #e67e22
     width: 100%;
     margin: 0;
     overflow: hidden;
-    background-color: #e29235;
+    background-color: rgba(0, 0, 0, 1);
 }
 
 .meal-photo img {
-    opacity: 0.9;
+    opacity: 0.7;
     width: 100%;
-    height: 200px;
+    height: 150px;
     -webkit-transform: scale(1.15);
     -ms-transform: scale(1.15);
     transform: scale(1.15);

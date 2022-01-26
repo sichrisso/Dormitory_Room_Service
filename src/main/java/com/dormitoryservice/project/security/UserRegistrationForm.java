@@ -19,6 +19,7 @@ public class UserRegistrationForm {
         user.setPassword(encoder.encode(this.password));
         user.setFullName(this.fullName);
         user.setPhone(this.phone);
+        //user.setUserRole("ROLE_USER");
         return user;
     }
 }

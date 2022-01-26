@@ -8,13 +8,18 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
     <link th:href="@{/css/custom2.css}" rel="stylesheet" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   </head>
   
 
   <body class="home2">
-    <form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+    <form style="margin-left: 950px;" sec:authorize = "isAuthenticated()" class="btn btn-default dropdown" method="POST" th:action="@{/logout}">
       <input type="submit" value="Logout"/>
-     </form>
+       </form>
+    
     <div class="container add"><br><br><br>
     
       <h1>Insert Menu</h1><br>
@@ -37,14 +42,14 @@
           <input type="number" hidden th:field="*{foodId}">
           <input class="btn btn-secondary col-2" type="submit" value="Insert" />
           <a class="btn btn-success col-2" th:href = "@{/menu/{id}(id=${id})}"> Done </a><br><br><br>
-       
         
       </form>
   
     	<hr>
-		
-		<a th:href = "@{/foodregister}" class="btn btn-link col-2" style="color: white; font-weight: bolder" > Back </a><br><br>
+		<!-- <a th:href = "@{/foodregister}" class="btn btn-link col-2" style="color: black; font-weight: bolder" > Back </a><br><br> -->
 	</div>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
   </body>
 </html>
 

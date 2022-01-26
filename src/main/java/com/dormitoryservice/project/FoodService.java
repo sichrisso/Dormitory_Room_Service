@@ -10,6 +10,4 @@ public interface FoodService {
 	boolean saveFood(Food food);
 	Food getFoodById(long id);
 	void deleteFoodById(long id);
-	// Page<Food> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
-    // Page<Food> findPaginated(int pageNo, int pageSize, String sortField, String sortDir);
 }

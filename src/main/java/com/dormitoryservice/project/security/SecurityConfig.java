@@ -32,10 +32,10 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeRequests()
-                .antMatchers("/service", "/food").access("hasRole('USER')")
+                .antMatchers("/insertMenu/{id}", "/showNewFoodForm", "/saveFood", "/showFormForUpdate/{id}", "/deleteFood/{id}").access("hasRole('FOOD')")
+                .antMatchers("/edit/**", "/deleteLaundry/**", "/saveLaundry").access("hasRole('LAUNDRY')")
+                .antMatchers("/login", "/laundryregister", "/foodregister" ).access("permitAll()")
                 .antMatchers("/", "/**").access("permitAll()")
-                // .antMatchers("/", "/**").anonymous()
-                // .antMatchers("/**/", "/**/**").anonymous()
                 .and()
                 .formLogin()
                 .loginPage("/login")

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
 
-  <body class="home">
+  <body class="entry">
     <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Register
         <span class="caret"></span></button>
@@ -22,7 +22,7 @@
             </ul>
           </li>
         </ul>
-        <form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+        <form class="btn btn-group-sm" style="font-size: 19px; border-radius:20rem" method="POST" th:action="@{/logout}">
           <input type="submit" value="Logout"/>
          </form>
        
@@ -32,58 +32,10 @@
         <div class="home_text_2">DORMITORY LIFE.</div>
         <div class="home_text_3"> Feeling At<span> Home!</span> </div>
         <div class="click-btn">
-          <a th:href="@{/service}"><button class="button">Service</button></a>
-          <a th:href="@{/login}"><button class="button">Log In</button></a>
+          <a th:href="@{/login}"><button class="button col-3">Show Services</button></a>
+          <!-- <a th:href="@{/login}"><button class="button">Log In</button></a> -->
       </div> 
     </div><br><br>
-    <section class="section-meals">
-      <ul class="meals-showcase clearfix">
-          <li>
-              <figure class="meal-photo">
-                  <img th:src="@{/images/1.jpg}" />
-              </figure>
-          </li>
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/2.jpg}" />
-              </figure>
-          </li>
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/3.jpg}" />
-              </figure>
-          </li>
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/4.jpg}" />
-              </figure>
-          </li>
-      </ul>
-      <ul class="meals-showcase clearfix">
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/5.jpg}" />
-              </figure>
-          </li>
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/7.jpeg}" />
-              </figure>
-          </li>
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/6.jpg}" />
-              </figure>
-          </li>
-          <li>
-              <figure class="meal-photo">
-                <img th:src="@{/images/8.jpg}" />
-              </figure>
-          </li>
-      </ul>
-  </section><br><br>
-  
-
     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
     <script>
         $(document).ready(function(){

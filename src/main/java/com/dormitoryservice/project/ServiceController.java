@@ -9,4 +9,8 @@ public class ServiceController {
     public String service() {
         return "service";
     }
+    @GetMapping("/entry")
+    public String home() {
+        return "home";
+    }
 }

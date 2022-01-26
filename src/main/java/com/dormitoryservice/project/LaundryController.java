@@ -1,8 +1,10 @@
 package com.dormitoryservice.project;
 
-//import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.dormitoryservice.project.Security.User;
+//import com.dormitoryservice.project.Security.UserRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,16 +21,20 @@ public class LaundryController {
 	@Autowired
 	private LaundryService laundryService;
 
+	@Autowired
+	private PasswordEncoder encoder;
+
+	// @Autowired
+	// private UserRepository userRepo;
+
 	@GetMapping("/laundry")
 	public String viewRegisterPage(Model model) {
         model.addAttribute("listLaundrys", laundryService.getAllLaundrys());
-        return "laundry";
-		/*return findPaginated(1, "LaundryPlace", "asc", model);*/		
+        return "laundry";	
 	}
     
 	@PostMapping("/saveLaundry")
 	public String saveLaundry(@ModelAttribute("laundry") Laundry laundry) {
-		// save Laundry to database
 		laundryService.saveLaundry(laundry);
 		return "redirect:/laundry";
 	}
@@ -36,10 +42,8 @@ public class LaundryController {
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable ( value = "id") long id, Model model) {
 		
-		// get Laundry from the service
 		Laundry laundry = laundryService.getLaundryById(id);
 		
-		// set Laundry as a model attribute to pre-populate the form
 		model.addAttribute("laundry", laundry);
 		return "edit_laundry";
 	}
@@ -47,7 +51,6 @@ public class LaundryController {
 	@GetMapping("/deleteLaundry/{id}")
 	public String deleteLaundry(@PathVariable (value = "id") long id) {
 		
-		// call delete Laundry method 
 		this.laundryService.deleteLaundryById(id);
 		return "redirect:/laundry";
 	}
@@ -61,31 +64,18 @@ public class LaundryController {
 
 	@PostMapping("/laundry")
 	public String saveLaundryRegister(@ModelAttribute("laundry") Laundry laundry) {
-		// save Food to database
-		laundryService.saveLaundry(laundry);
-		return "redirect:/login";
+		User user = new User();
+		user.setUsername(laundry.getLuserName());
+		user.setPassword(encoder.encode(laundry.getLaundryPassword()));
+		user.setPhone(String.valueOf(laundry.getLauContact()));
+		user.setFullName(laundry.getFirstName());
+		user.setUserRole("LAUNDRY");
+		
+	
+		if(laundryService.saveLaundryRegister(laundry, user)){
+			return "redirect:/login";
+		}else{
+		return "redirect:/loginfaild";}
+		
 	}
-	
-	
-	/*@GetMapping("/page/{pageNo}")
-	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, 
-			@RequestParam("sortField") String sortField,
-			@RequestParam("sortDir") String sortDir,
-			Model model) {
-		int pageSize = 5;
-		
-		Page<Laundry> page = laundryService.findPaginated(pageNo, pageSize, sortField, sortDir);
-		List<Laundry> listLaundrys = page.getContent();
-		
-		model.addAttribute("currentPage", pageNo);
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("totalItems", page.getTotalElements());
-		
-		model.addAttribute("sortField", sortField);
-		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
-		
-		model.addAttribute("listLaundrys", listLaundrys);
-		return "food";
-	}*/
 }

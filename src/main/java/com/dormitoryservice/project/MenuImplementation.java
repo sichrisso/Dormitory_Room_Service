@@ -46,13 +46,4 @@ public class MenuImplementation implements MenuService {
 	public void deleteMenuById(long id) {
 		this.menuRepository.deleteById(id);
 	}
-
-	/*@Override
-	public Page<Menu> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
-		Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
-			Sort.by(sortField).descending();
-		
-		Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
-		return this.menuRepository.findAll(pageable);
-	}*/
 }
