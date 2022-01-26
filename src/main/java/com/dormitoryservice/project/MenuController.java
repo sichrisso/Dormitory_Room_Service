@@ -77,7 +77,7 @@ public class MenuController {
 		
 		// call delete Menu method 
 		this.menuService.deleteMenuById(id);
-		return "redirect:/menu";
+		return "redirect:/food";
 	}
 	
 

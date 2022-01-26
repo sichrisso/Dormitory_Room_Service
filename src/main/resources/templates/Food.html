@@ -89,8 +89,12 @@
 	
 </head>
 <body class="home2">
+	<form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+		<input type="submit" value="Logout"/>
+	   </form>
 
 	<div  class="container my-2"><br>
+		
 	<h1 style="text-align:center">Food Services </h1><br>
 	
 	<!--<a th:href = "@{/showNewFoodForm}" class="btn btn-primary btn-sm mb-3"> Add Food </a>-->

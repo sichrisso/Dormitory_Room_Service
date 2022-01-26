@@ -34,12 +34,15 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/service", "/food").access("hasRole('USER')")
                 .antMatchers("/", "/**").access("permitAll()")
+                // .antMatchers("/", "/**").anonymous()
+                // .antMatchers("/**/", "/**/**").anonymous()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/service")
                 .and()
                 .logout()
+                .logoutSuccessUrl("/login")
                 .and()
                 .build();
     }

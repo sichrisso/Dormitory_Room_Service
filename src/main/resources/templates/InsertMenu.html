@@ -9,8 +9,12 @@
 	crossorigin="anonymous">
     <link th:href="@{/css/custom2.css}" rel="stylesheet" />
   </head>
+  
 
   <body class="home2">
+    <form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+      <input type="submit" value="Logout"/>
+     </form>
     <div class="container add"><br><br><br>
     
       <h1>Insert Menu</h1><br>

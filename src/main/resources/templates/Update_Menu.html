@@ -13,6 +13,9 @@
 	<div class="container add"><br><br><br>
 	
 		<h1>Update Menu</h1><br>
+    <form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+      <input type="submit" value="Logout"/>
+     </form>
  
 		<form action="#" th:action="@{/saveMenu}" th:object="${menu}"
 			method="POST">

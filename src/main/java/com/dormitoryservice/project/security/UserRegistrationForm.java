@@ -1,10 +1,12 @@
 package com.dormitoryservice.project.Security;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
 @Data
+@Component
 public class UserRegistrationForm {
     private String username;
     private String password;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Dormitory Service</title>
@@ -12,9 +12,12 @@
 	
 </head>
 <body class="home2">
+	<form class="btn btn-default dropdown-toggle d-flex" method="POST" th:action="@{/logout}">
+		<input type="submit" value="Logout"/>
+	   </form>
 
 	<div class="container my-2"><br>
-    <a style="margin-left: 900px;" th:href = "@{/addmenu/{id}(id=${id})}" class="btn btn-light btn-sm mb-4"> Add Menu </a>
+    <a style="margin-left: 900px;" th:href = "@{/addmenu/{id}(id=${id})}" class="btn btn-light btn-sm mb-4"> Insert Menu </a>
 	<h1 style="text-align:center">Menu</h1><br>
 	
 		<table style="border: 1; table-layout: fixed;" class = "table table-striped table-responsive-md">
@@ -22,7 +25,7 @@
 				<tr>
 					<th>Food</th>
           			<th> Price(Birr)</th>
-					<th sec:authorize="hasAuthority('ROLE_FOOD')"> </th>
+					<th> </th>
 				</tr>
 			</thead>
 		<tbody>
@@ -30,10 +33,9 @@
 					<td th:text="${menu.food}"></td>
 					<td th:text="${menu.price}"></td>
 					
-                    <td sec:authorize="hasAuthority('ROLE_FOOD')">
+                    <td >
                         <a th:href="@{/update/{id}(id=${menu.id})}" class="btn btn-dark">Update</a>
-                        <a th:href="@{/deleteMenu/{id}(id=${menu.id})}" class="btn btn-danger">Delete</a>
-					</td>   
+                        <a th:href="@{/deleteMenu/{id}(id=${menu.id})}" class="btn btn-danger">Delete</a></td>   
 				</tr>
 			</tbody>
 		</table>
